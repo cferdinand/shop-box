@@ -8,7 +8,11 @@ This project was the complete redesign of an e-commerce platform to modernize th
 ## Components
 
 #### Product Overview
+The Product Overview widget allows the user to browse through different styles of the product and add them to the cart. Using the custom image carousel, the user can browse through all of the images for the selected style. The user can also click to enlarge an image and browse the images using the expanded view. From this view, the image can be further expanded to check out the fine details for the images. Using the form, the user can select a size and quantity based on the available SKUs from the api.
+
+![product-overview](/dist/images/product-overview.gif)
 #### Related Items
+
 #### Question & Answers
 The Questions & Answers microservice allows asking and answering of questions for the product selected. Users can add photos to their answers and there is form validation for both submitting answers and questions. A live-search algorithm was implemented and searches through answers when there are more than 3 letters typed in the search bar.
 
