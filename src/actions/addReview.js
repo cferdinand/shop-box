@@ -1,10 +1,11 @@
 import axios from "axios";
+import { baseUrl } from "../../api/config";
 import getReviewList from "./getReviewList.js";
 
 const addReview = ([productId, newReview]) => {
   return dispatch => {
     return axios
-      .post(`http://3.134.102.30/reviews/${productId}`, newReview)
+      .post(baseUrl + `reviews/${productId}`, newReview)
       .then(() => {
         getReviewList([1, "Reviews", productId]);
       })

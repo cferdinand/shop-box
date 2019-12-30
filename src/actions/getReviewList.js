@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseUrl } from "../../api/config";
 
 const getReviewList = ([
   page,
@@ -10,7 +11,8 @@ const getReviewList = ([
   return dispatch => {
     return axios
       .get(
-        `http://3.134.102.30/reviews/${productID}/list?count=${count}&page=${page}&sort=${sort}`
+        baseUrl +
+          `reviews/${productID}/list?count=${count}&page=${page}&sort=${sort}`
       )
       .then(({ data }) => {
         dispatch({

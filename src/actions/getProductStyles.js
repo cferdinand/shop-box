@@ -1,9 +1,10 @@
 import axios from "axios";
+import { baseUrl } from "../../api/config";
 import selectStyle from "../actions/selectStyle";
 
 let getProductStyles = productId => dispatch =>
   axios
-    .get(`http://3.134.102.30/products/${productId}/styles`)
+    .get(baseUrl + `products/${productId}/styles`)
     .then(({ data }) => {
       const defaultIndex = data.results.reduce(
         (memo, item, index) => (item["default?"] === 1 ? index : memo),

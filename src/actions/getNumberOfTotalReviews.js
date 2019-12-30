@@ -1,8 +1,9 @@
 import axios from "axios";
+import { baseUrl } from "../../api/config";
 
 const getTotalReviews = productID => {
   return axios
-    .get(`http://3.134.102.30/reviews/${productID}/list?count=100000`)
+    .get(baseUrl + `reviews/${productID}/list?count=100000`)
     .then(({ data }) => {
       return data;
     })
