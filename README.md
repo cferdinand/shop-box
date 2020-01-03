@@ -1,7 +1,7 @@
 # ShopBox App
 
 ## ShopBox Overview
-This project was the complete redesign of an e-commerce platform to modernize their webpage. The application was built by a four person team and adhered to a business requirements document. The microservices of the application included: Product Overview, Related Items & Add to Outfit, Question & Answers, and Reviews. Each individual on the team took ownership of one microservice.
+This is a complete redesign of an e-commerce platform to modernize their webpage. The application was built by a four person team and adhered to a business requirements document. The microservices of the application included: Product Overview, Related Items & Add to Outfit, Question & Answers, and Reviews. Each individual on the team took ownership of one microservice.
 
 ![Shop-Box-Overview](/dist/images/Shopbox-Complete.gif)
 
@@ -17,8 +17,20 @@ The Product Overview widget allows the user to browse through different styles o
 The Questions & Answers microservice allows asking and answering of questions for the product selected. Users can add photos to their answers and there is form validation for both submitting answers and questions. A live-search algorithm was implemented and searches through answers when there are more than 3 letters typed in the search bar.
 
 ![q-and-a](/dist/images/q-and-a.gif)
-#### Reviews
+#### Ratings & Reviews
+The Ratings & Reviews microservice grants the user the ability to read posted reviews, see product ratings and post reviews and photos for any product. Posted reviews are displayed within the reviews section 2 at a time. See more reviews by clicking on the New reviews are subject to form validation before sending a POST request to the API.
 
+Reviews can be filtered based on the below criteria:
+
+- Ratings
+Selecting a rating filters the reviews that match the rating clicked on. These selections can be stacked by clicking on multiple ratings. Rating filters can be removed by clicking on the rating again or clicking the clear filters button.
+
+- Sort options
+Reviews for the selected product can be sorted by relevance, newest and helpfulness.
+
+- Search
+A search algorithm has been implemented to allow users to search through the reviews for a particular product. Typing 3 or more letters filters the list of reviews that matches the searched upon criteria.
+ 
 ## Building and running on localhost
 
 First install dependencies:
