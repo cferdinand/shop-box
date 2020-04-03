@@ -1,9 +1,9 @@
 import axios from "axios";
-import { baseUrl } from "./config";
+import baseUrl from "./config";
 
 export default event => {
   if (event.target.className !== undefined) {
-    const url = baseUrl + "interactions/";
+    const url = baseUrl + "/interactions/";
     const data = {
       element: event.target.className,
       widget: event.target.className,

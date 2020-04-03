@@ -7,7 +7,7 @@ app.use(compression());
 
 app.use("/products/:productid", express.static("dist"));
 app.get("/", (req, res) => {
-  res.redirect("/products/8");
+  res.redirect("/products/4");
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

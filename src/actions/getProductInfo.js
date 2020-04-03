@@ -1,12 +1,10 @@
 import axios from "axios";
-import { baseUrl } from "../../api/config";
+import baseUrl from "../../api/config.js";
 
 let getProductInfo = productID => {
-  //assuming that the url has products/:productID
-
   return dispatch => {
     return axios
-      .get(baseUrl + `products/${productID}`)
+      .get(`${baseUrl}/products/${productID}`)
       .then(({ data }) => {
         dispatch({
           type: "UPDATE_CURRENT_PRODUCT",

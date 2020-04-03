@@ -1,10 +1,10 @@
 import axios from "axios";
-import { baseUrl } from "../../api/config";
+import baseUrl from "../../api/config.js";
 
 const getFilteredReviewsList = ([rating, actionType, productID]) => {
   return dispatch => {
     return axios
-      .get(baseUrl + `reviews/${productID}/list?count=10000`)
+      .get(`${baseUrl}/reviews/${productID}/list?count=10000`)
       .then(({ data }) => {
         let filteredList = [];
         if (Array.isArray(rating)) {

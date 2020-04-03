@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseUrl } from "../../api/config";
+import baseUrl from "../../api/config.js";
 
 const getReviewList = ([
   page,
@@ -11,8 +11,7 @@ const getReviewList = ([
   return dispatch => {
     return axios
       .get(
-        baseUrl +
-          `reviews/${productID}/list?count=${count}&page=${page}&sort=${sort}`
+        `${baseUrl}/reviews/${productID}/list?count=${count}&page=${page}&sort=${sort}`
       )
       .then(({ data }) => {
         dispatch({

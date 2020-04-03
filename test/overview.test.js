@@ -1,8 +1,6 @@
 import React from "react";
 import { mount, shallow, configure } from "enzyme";
-
-import ProductDetails from "../src/components/ProductDetails/ProductDetails.jsx";
-import StyleBubble from "../src/components/ProductDetails/StyleBubble.jsx";
+import StyleBubble from "../src/components/MainOverview/Selectors/StyleBubble.jsx";
 
 import store from "../src/store/store.js";
 import { Provider } from "react-redux";
