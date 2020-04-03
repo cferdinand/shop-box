@@ -9,6 +9,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import LoopOutlinedIcon from "@material-ui/icons/LoopOutlined";
+import baseUrl from "../../../api/config";
 
 const styles = theme => ({
   container: {
@@ -85,10 +86,7 @@ class AddAnswer extends Component {
       alert(errorMsg.join("\n"));
     } else {
       axios
-        .post(
-          `http://18.223.1.30/qa/${this.props.questionId}/answers`,
-          answerObj
-        )
+        .post(`${baseUrl}/qa/${this.props.questionId}/answers`, answerObj)
         .then(() => {
           this.props.getAnswers();
           this.setState({ photos: [] });

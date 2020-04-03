@@ -5,13 +5,14 @@ import MoreQuestions from "./MoreQuestions.jsx";
 import AddQuestion from "./AddQuestion.jsx";
 import axios from "axios";
 import Grid from "@material-ui/core/Grid";
+import baseUrl from "../../../api/config.js";
 
 export default function QuestionAnswer(props) {
   const [questions, setQuestions] = useState([]);
   const [counter, setCounter] = useState(2);
   let getQuestions = id => {
     axios
-      .get(`http://18.223.1.30/qa/${id}/?count=1000`)
+      .get(`${baseUrl}/qa/${id}/?count=1000`)
       .then(({ data }) => {
         setQuestions(data.results);
       })

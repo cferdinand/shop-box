@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import baseUrl from "../../../api/config";
 
 export default function Answers({ answer, getAnswers }) {
   let d = new Date(answer.date.replace(/-/g, "/").replace(/T.+/, ""));
@@ -28,7 +29,7 @@ export default function Answers({ answer, getAnswers }) {
 
   const markAnswerHelpful = () => {
     axios
-      .put(`http://18.223.1.30/qa/answer/${answer.answer_id}/helpful`)
+      .put(`${baseUrl}/qa/answer/${answer.answer_id}/helpful`)
       .then(() => {
         getAnswers();
       })
@@ -40,7 +41,7 @@ export default function Answers({ answer, getAnswers }) {
   const reportAnswer = () => {
     if (!reported) {
       axios
-        .put(`http://18.223.1.30/qa/answer/${answer.answer_id}/report`)
+        .put(`${baseUrl}/qa/answer/${answer.answer_id}/report`)
         .then(() => {
           markReported(true);
         })

@@ -8,6 +8,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
+import baseUrl from "../../../api/config.js";
 
 const styles = theme => ({
   container: {
@@ -84,7 +85,7 @@ class AddQuestion extends Component {
       alert(errorMsg.join("\n"));
     } else {
       axios
-        .post(`http://18.223.1.30/qa/${this.props.product.id}`, questionObj)
+        .post(`${baseUrl}/qa/${this.props.product.id}`, questionObj)
         .then(() => {
           this.props.getQuestions(this.props.product.id);
         })

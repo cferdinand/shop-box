@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as Promise from "bluebird";
+import baseUrl from "../../../api/config.js";
 
 const getRelatedItems = async productID => {
   const PromiseAllWrapper = arr => {
@@ -7,9 +8,7 @@ const getRelatedItems = async productID => {
   };
   let myData, relatedItems;
   try {
-    let { data } = await axios.get(
-      `http://18.223.1.30/products/${productID}/related`
-    );
+    let { data } = await axios.get(`${baseUrl}/products/${productID}/related`);
     relatedItems = data;
   } catch (err) {
     console.log(err);
@@ -18,15 +17,15 @@ const getRelatedItems = async productID => {
   let relatedReviews = relatedItems.slice();
   //returns an array of the product ids
   let productInfos = relatedItems.map(id => {
-    return axios.get(`http://18.223.1.30/products/${id}`);
+    return axios.get(`${baseUrl}/products/${id}`);
   });
 
   let productReviews = relatedReviews.map(id => {
-    return axios.get(`http://18.223.1.30/reviews/${id}/meta`);
+    return axios.get(`${baseUrl}/reviews/${id}/meta`);
   });
 
   let productStyles = relatedReviews.map(id => {
-    return axios.get(`http://18.223.1.30/products/${id}/styles`);
+    return axios.get(`${baseUrl}/products/${id}/styles`);
   });
 
   let doItAllAtOnce = [

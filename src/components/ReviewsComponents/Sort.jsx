@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import baseUrl from "../../../api/config.js";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -26,7 +27,7 @@ const Sort = ({ sortReviews, productId }) => {
 
   useEffect(() => {
     axios
-      .get(`http://18.223.1.30/reviews/${productId.id}/list?count=100000`)
+      .get(`${baseUrl}/reviews/${productId.id}/list?count=100000`)
       .then(({ data }) => {
         setNumber(data.results.length);
       })
