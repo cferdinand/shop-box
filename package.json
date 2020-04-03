@@ -76,5 +76,8 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     }
+  },
+  "engines": {
+    "node": "^13.1.0"
   }
 }
