@@ -5,7 +5,14 @@ const port = 3000;
 
 app.use(compression());
 
-app.use("/products/:productid", express.static("dist"));
+app.use(
+  "/products/:productid",
+  express.static(path.join(__dirname, "/../client/dist"), {
+    maxAge: 1,
+    index: false
+  })
+);
+
 app.get("/", (req, res) => {
   res.redirect("/products/4");
 });
