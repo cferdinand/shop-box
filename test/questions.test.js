@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-
 import QuestionAnswer from "../src/components/questionComponents/QuestionAnswer.jsx";
 import QASet from "../src/components/questionComponents/QASet.jsx";
 import store from "../src/store/store.js";

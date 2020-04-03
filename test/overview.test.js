@@ -1,5 +1,4 @@
 import React from "react";
-import { mount, shallow, configure } from "enzyme";
 import StyleBubble from "../src/components/MainOverview/Selectors/StyleBubble.jsx";
 
 import store from "../src/store/store.js";

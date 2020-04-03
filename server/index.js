@@ -6,13 +6,6 @@ const port = 3000;
 
 app.use(compression());
 
-app.use(
-  express.static(path.join(__dirname, "/../client/dist"), {
-    maxAge: 1,
-    index: false
-  })
-);
-
 app.use("/products/:productid", express.static("dist"));
 
 app.get("/", (req, res) => {

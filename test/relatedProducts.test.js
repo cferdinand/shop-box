@@ -1,11 +1,8 @@
 import React from "react";
-import { mount, shallow, configure } from "enzyme";
+import { shallow } from "enzyme";
 import Typography from "@material-ui/core/Typography";
-import getRelatedItems from "../src/lib//relatedItemsHelpers/relatedItemsApiCall.js";
 import ItemList from "../src/components/RelatedItemsComponents/ItemList.jsx";
 import AddToMyOutfitCardButton from "../src/components/RelatedItemsComponents/AddOutfitCardButton.jsx";
-import store from "../src/store/store.js";
-import { Provider } from "react-redux";
 import MyOutfitsList from "../src/components/RelatedItemsComponents/MyOutfitsList.jsx";
 import PopOut from "../src/components/RelatedItemsComponents/PopOut.jsx";
 
